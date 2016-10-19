@@ -14,7 +14,7 @@ FRAMEWORK = -framework Cocoa -framework OpenGL -framework IOKit -framework CoreV
 
 CFLAG = -Wall -Werror -Wextra
 
-INCLUDES = -I includes/ -I glfw-3.2.1/include/ glfw-3.2.1/libglfw3.a
+INCLUDES = -I includes/
 
 all: $(NAME)
 
