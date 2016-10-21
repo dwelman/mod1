@@ -11,6 +11,9 @@
 
 #include "glext.h"
 #include <iostream>
+#include <stdio.h>
+#include <Vector3.class.h>
+#include <Point.class.h>
 
 using namespace std;
 
