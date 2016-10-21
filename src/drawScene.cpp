@@ -17,7 +17,7 @@ void drawScene()
 	glMatrixMode(GL_MODELVIEW); //Switch to the drawing perspective
 	glLoadIdentity(); //Reset the drawing perspective
 	glRotatef(-cam_angle, 0.0f, 1.0f, 0.0f);
-	//glTranslatef(0.0f, 0.0f, -5.0f);
+	glTranslatef(0.0f, 0.0f, -5.0f);
 	
 	glPushMatrix();
 	glTranslatef(0.0f, -1.0f, 0.0f);
