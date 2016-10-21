@@ -1,16 +1,14 @@
 NAME = mod1
 
-GLEW = glew.c
-
 SRC_FILES = main.cpp \
+			callbacks.cpp \
+			drawScene.cpp
 
-SRC = $(addprefix src/, $(SRC_FILES)) 
+SRC = $(addprefix src/, $(SRC_FILES))
 
-GSRC = $(addprefix src/, $(GLEW)) 
+OBJ = $(SRC:.cpp=.o)
 
-OBJ = $(SRC:.cpp=.o) $(GSRC:.c=.o) 
-
-FRAMEWORK = -framework Cocoa -framework OpenGL -framework IOKit -framework CoreVideo
+FRAMEWORK = -framework GLUT -framework OpenGL -framework Cocoa
 
 CFLAG = -Wall -Werror -Wextra
 
@@ -19,7 +17,7 @@ INCLUDES = -I includes/
 all: $(NAME)
 
 $(NAME):
-	@g++ $(INCLUDES) -c $(SRC) $(GSRC) 
+	@g++ $(INCLUDES) -c $(SRC)
 	@echo "OBJECTS CREATED"
 	@/bin/mv -f *.o src
 	@g++ $(CFLAG) $(INCLUDES) -o $(NAME) $(OBJ) $(FRAMEWORK)
